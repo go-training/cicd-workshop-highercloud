@@ -10,6 +10,6 @@
 docker run --name my-python-app --link my-redis:redis -d my-python-app-image
 ```
 
-在這個指令中，`--link` 參數的語法為 `--link <container_name>:<alias>`，其中 `<container_name>` 是要連結的容器名稱，而 ` <alias>` 是在my-python-app容器內部使用的別名。這樣，my-python-app 容器就可以透過 redis 這個別名來連接到 my-redis 容器。
+在這個指令中，`--link` 參數的語法為 `--link <container_name>:<alias>`，其中 `<container_name>` 是要連結的容器名稱，而 `<alias>` 是在my-python-app容器內部使用的別名。這樣，my-python-app 容器就可以透過 redis 這個別名來連接到 my-redis 容器。
 
 請注意，雖然 `--link` 參數仍然可以使用，但官方建議使用自定義的網路（Custom Networks）或者Docker Compose來取代--link參數，因為這些方法提供了更靈活和強大的容器連結功能。
