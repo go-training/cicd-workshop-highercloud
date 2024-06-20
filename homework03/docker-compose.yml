@@ -1,0 +1,6 @@
+services:
+  highercloud:
+    image: example/webapp
+    build:
+      context: .
+      dockerfile: Dockerfile
