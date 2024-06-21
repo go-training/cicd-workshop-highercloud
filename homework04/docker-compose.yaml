@@ -1,0 +1,20 @@
+services:
+  demo01:
+    image: ghcr.io/go-training/cicd-workshop-highercloud:latest
+    ports:
+      - "8082:8000"
+    restart: always
+
+  demo02:
+    image: ghcr.io/go-training/cicd-workshop-highercloud:1
+    ports:
+      - "8083:8000"
+    restart: always
+
+  watchtower:
+    image: containrrr/watchtower
+    restart: always
+    volumes:
+      - $HOME/.docker/config.json:/config.json
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 5 --cleanup
